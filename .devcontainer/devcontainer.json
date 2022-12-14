@@ -4,8 +4,8 @@
 	"name": "Checkmk",
 	"build": {
 		"dockerfile": "Dockerfile",
-		// Update 'VARIANT' to pick an Ubuntu version: focal, bionic
-		"args": { "VARIANT": "2.1.0-latest" }
+		// Update 'VARIANT' to pick an Ubuntu version: focal, bionic - Deactivated
+		// "args": { "VARIANT": "2.1.0-latest" }
 	},
 
 	// Set *default* container specific settings.json values on container create.
@@ -29,7 +29,7 @@
 	"remoteUser": "cmk",
 
 	"remoteEnv": {
-		"PATH": "${containerEnv:PATH}:/omd/sites/cmk/bin:/omd/sites/cmk/local/lib/python3/bin/",
+		"PATH": "/omd/sites/cmk/lib/perl5/bin:/omd/sites/cmk/local/bin:/omd/sites/cmk/bin:/omd/sites/cmk/local/lib/perl5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:${containerEnv:PATH}:/omd/sites/cmk/bin:/omd/sites/cmk/local/lib/python3/bin/",
 		"OMD_ROOT": "/omd/sites/cmk",
 		"OMD_SITE": "cmk",
 		"CMK_SITE_ID": "cmk",
